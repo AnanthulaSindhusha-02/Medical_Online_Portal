@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gamification - LifeBridge</title>
+  <link rel="stylesheet" href="background.css">
+  <link rel="stylesheet" href="gamification.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <div class="logo">❤️ LifeBridge</div>
+    </div>
+    <div class="profile-menu">
+      <button class="profile-btn"><i class="fas fa-user-circle"></i> Profile</button>
+      <div class="dropdown-content">
+        <a href="gamification.html"><i class="fas fa-gamepad"></i> Gamification</a>
+        <a href="#" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+        <div class="header">
+            <button onclick="goBack()">Back</button>
+            <button onclick="goHomepage()">Home</button>
+        </div>
+
+  <div class="container">
+    <h1>🎉 Gamification Dashboard</h1>
+    <p>Earn points and unlock badges as you donate or request help!</p>
+
+    <!-- Points & Level -->
+    <div class="stats">
+      <div class="stat-card">
+        <i class="fas fa-star"></i>
+        <h2 id="points">120</h2>
+        <p>Total Points</p>
+      </div>
+      <div class="stat-card">
+        <i class="fas fa-trophy"></i>
+        <h2 id="level">Level 3</h2>
+        <p>Current Level</p>
+      </div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-section">
+      <p>Progress to Next Level</p>
+      <div class="progress-bar">
+        <div class="progress" style="width: 60%;"></div>
+      </div>
+    </div>
+
+    <!-- Badges -->
+    <h2>🏅 Your Badges</h2>
+    <div class="badges">
+      <div class="badge"><i class="fas fa-hand-holding-medical"></i><p>First Donation</p></div>
+      <div class="badge"><i class="fas fa-users"></i><p>Helper</p></div>
+      <div class="badge locked"><i class="fas fa-crown"></i><p>Champion</p></div>
+    </div>
+  </div>
+
+  <script src="gamification.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Request Help - BloodBridge</title>
+    <link rel="stylesheet" href="background.css">
+    <link rel="stylesheet" href="help.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+    <nav class="navbar">
+    <div class="logo">
+      <div class="logo">❤️ LifeBridge</div>
+    </div>
+    <div class="profile-menu">
+      <button class="profile-btn"><i class="fas fa-user-circle"></i> Profile</button>
+      <div class="dropdown-content">
+        <a href="gamification.html"><i class="fas fa-gamepad"></i> Gamification</a>
+        <a href="#" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      </div>
+    </div>
+  </nav>
+    <div class="container">
+        <div class="header">
+            <button onclick="goBack()">Back</button>
+            <h2>Request Help</h2>
+            <button onclick="goHomepage()">Home</button>
+        </div>
+
+        <form id="request-form">
+            <label for="blood-group">Select Blood Group Needed:</label>
+            <select id="blood-group" required>
+                <option value="">--Select--</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+            </select>
+            <button type="submit">Request Help</button>
+        </form>
+
+        <h3>Matching Donors</h3>
+        <div id="map"></div>
+        <div id="details">
+            <div id="all-details"></div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="help.js"></script>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+        function goHomepage() {
+            window.location.href = "homepage.html";
+        }
+    </script>
+</body>
+</html>
