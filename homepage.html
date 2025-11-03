@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Home - LifeBridge</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="background.css">
+    <link rel="stylesheet" href="homepage.css" />
+    
+</head>
+<body>
+    <nav class="navbar">
+    <div class="logo">
+        <i class="fas fa-heart"></i> ❤️ LifeBridge
+    </div>
+    <div class="profile-menu">
+            <button class="profile-btn"><i class="fas fa-user-circle"></i> Profile</button>
+        <div class="dropdown-content">
+            <a href="gamification.html"><i class="fas fa-gamepad"></i> Gamification</a>
+            <a href="#" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+    </div>
+</nav>
+
+    
+  <div class="main-content">
+  <h1 id="welcome-text">Welcome, User</h1>
+  <p>“A single act of kindness can save a thousand lives.”</p>
+
+  <div class="cards">
+    <!-- Blood -->
+    <div class="card">
+      <i class="fas fa-tint icon red"></i>
+      <h3>Blood</h3>
+      <p>Donate or request blood by selecting your blood type.</p>
+      <button onclick="window.location.href='donor.html'">Donate Blood</button>
+      <br>
+      <button onclick="window.location.href='help.html'">Request Blood</button>
+    </div>
+
+    <!-- Organ -->
+    <div class="card">
+      <i class="fas fa-heartbeat icon blue"></i>
+      <h3>Organ</h3>
+      <p>Donate or request organs like Kidney, Liver, Heart, Lungs, or Eyes.</p>
+      <button onclick="window.location.href='organ_donation.html'">Donate Organ</button>
+      <button onclick="window.location.href='organ_request.html'">Request Organ</button>
+    </div>
+
+    <!-- Equipment -->
+    <div class="card">
+      <i class="fas fa-wheelchair icon green"></i>
+      <h3>Medical Equipment</h3>
+      <p>Donate or request equipment like Wheelchairs, Oxygen Cylinders, or Crutches.</p>
+      <button onclick="window.location.href='equipment_donation.html'">Donate Equipment</button>
+      <button onclick="window.location.href='equipment_request.html'">Request Equipment</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- Dynamic content section -->
+<div id="dynamic-content" class="dynamic-content"></div>
+    
+
+    <script src="homepage.js"></script>
+    <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Get username from localStorage (set during login)
+    let username = localStorage.getItem("username") || "User";
+    
+    // Replace the welcome text
+    document.getElementById("welcome-text").innerText = `Welcome, ${username}`;
+  });
+
+  function logout() {
+    localStorage.removeItem("username");
+    window.location.href = "login.html"; // redirect to login page
+  }
+</script>
+</body>
+</html>
